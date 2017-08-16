@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="slides">
+    {% for image in site.static_files %}
+      {% if image.path contains 'img/slides' %}
+        <img class="slides__slide slides__slide--hidden" src="{{site.baseurl}}{{image.path}}">
+      {% endif %}
+    {% endfor %}
+  </div>
+  <img class="humble-logo" src="/assets/img/logo.png">
+
+  {% include menu.html %}
+</div>
