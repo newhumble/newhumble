@@ -43,7 +43,8 @@ function resizeVideos() {
   });
 
   function doResizing() {
-    var newWidth = fluidEl.clientWidth;
+    var fluidElWidth = fluidEl.clientWidth;
+    var newWidth = fluidElWidth > 800 ? fluidElWidth / 2 : fluidElWidth;
 
     videos.forEach(function(video) {
       var aspectRatio = video.getAttribute('data-aspect-ratio');
